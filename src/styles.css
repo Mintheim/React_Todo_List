@@ -120,7 +120,7 @@ body {
 .list li:has(input:checked) label::before {
   content: "✔"; /* Checkmark for checked items */
   background: #20ae46; /* Green background for checked items */
-  color: #ffffff; /* White text color */
+  color: #400a0a; /* White text color */
   font-size: 0.75rem; /* Font size of the checkmark */
   font-weight: bold; /* Bold checkmark */
 }
