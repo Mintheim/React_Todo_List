@@ -1,0 +1,173 @@
+/* Global Styles */
+* {
+  font-family: Arial, Helvetica, sans-serif; /* Consistent font family */
+  box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+}
+
+/* Body Styles */
+body {
+  background: #333; /* Dark background color for the body */
+  color: #ffffff; /* White text color */
+  max-width: 400px; /* Maximum width of the content area */
+  padding: 1rem; /* Padding around the content */
+  margin: 10em auto 0 auto; /* Center the content with margin from the top */
+}
+
+/* Form Styles */
+.new-item-form {
+  display: flex; /* Flexbox layout for the form */
+  flex-direction: column; /* Stack children vertically */
+  gap: 0.5rem; /* Space between form elements */
+}
+
+.form-row {
+  display: flex; /* Flexbox layout for form rows */
+  flex-direction: column; /* Stack children vertically */
+  gap: 0.1rem; /* Small space between row elements */
+}
+
+/* Input Styles */
+.new-item-form input {
+  outline: none; /* Remove default outline */
+  border: 1px solid #cccccc; /* Light gray border */
+  background: #ffffff; /* White background */
+  border-radius: 0.25em; /* Rounded corners */
+  padding: 0.25em 0.5em; /* Padding inside the input field */
+  color: #333333; /* Dark text color */
+}
+
+.new-item-form input:focus {
+  border: 1px solid #4a90e2; /* Blue border on focus */
+}
+
+/* Button Styles */
+.btn {
+  background: #4a90e2; /* Blue background color */
+  border: 1px solid #4a90e2; /* Blue border */
+  color: #ffffff; /* White text color */
+  padding: 0.25em 0.5em; /* Padding inside the button */
+  border-radius: 0.25em; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  outline: none; /* Remove default outline */
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #3b7cc1; /* Darker blue background on hover/focus */
+}
+
+/* Danger Button Styles */
+.btn.btn-danger {
+  background: #e94e4e; /* Red background color for danger actions */
+  border: 1px solid #e94e4e; /* Red border */
+  color: #ffffff; /* White text color */
+}
+
+.btn.btn-danger:hover,
+.btn.btn-danger:focus-visible {
+  background: #d43b3b; /* Darker red background on hover/focus */
+}
+
+/* List Styles */
+.list {
+  display: flex; /* Flexbox layout for the list */
+  flex-direction: column; /* Stack list items vertically */
+  gap: 0.3rem; /* Small space between list items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  margin-left: 1rem; /* Left margin for the list */
+  list-style: none; /* Remove default list styling */
+}
+
+.list li {
+  display: flex; /* Flexbox layout for list items */
+  gap: 0.5rem; /* Space between list item elements */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.list li label {
+  display: flex; /* Flexbox layout for labels */
+  gap: 0.25rem; /* Small space between label elements */
+  cursor: pointer; /* Pointer cursor on hover */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.list li input {
+  outline: none; /* Remove default outline */
+  width: 0; /* Hide input */
+  height: 0; /* Hide input */
+  appearance: none; /* Remove default appearance */
+  pointer-events: none; /* Disable pointer events */
+  position: absolute; /* Position input absolutely */
+}
+
+.list li label::before {
+  content: ""; /* Empty content */
+  display: block; /* Block-level element */
+  width: 0.9rem; /* Width of the checkbox */
+  height: 0.9rem; /* Height of the checkbox */
+  background: #cccccc; /* Light gray background */
+  border-radius: 0.25em; /* Rounded corners */
+  display: flex; /* Flexbox layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.list li label:hover::before {
+  background: #b3b3b3; /* Darker gray background on hover */
+}
+
+.list li:has(input:checked) label::before {
+  content: "✔"; /* Checkmark for checked items */
+  background: #20ae46; /* Green background for checked items */
+  color: #ffffff; /* White text color */
+  font-size: 0.75rem; /* Font size of the checkmark */
+  font-weight: bold; /* Bold checkmark */
+}
+
+.list li:has(input:checked) label:hover::before {
+  background: #3bc15f; /* Darker green background on hover for checked items */
+}
+
+/* Animation Styles */
+@keyframes fadeOut {
+  from {
+    opacity: 1; /* Start fully opaque */
+  }
+  to {
+    opacity: 0; /* Fade out to fully transparent */
+  }
+}
+
+.fade-out {
+  animation: fadeOut 1.5s forwards; /* Apply fade-out animation */
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 600px) {
+  .header {
+    font-size: 1.25rem; /* Smaller font size for header */
+  }
+
+  .new-item-form {
+    flex-direction: column; /* Stack form elements vertically on smaller screens */
+    gap: 0.3rem; /* Adjust spacing */
+  }
+
+  .btn {
+    padding: 0.2em 0.4em; /* Smaller padding for buttons */
+  }
+
+  .list li {
+    flex-direction: column; /* Stack list item elements vertically on smaller screens */
+    align-items: flex-start; /* Align items to the start of the container */
+  }
+
+  .list li label {
+    font-size: 0.9rem; /* Smaller font size for labels */
+  }
+
+  .new-item-form input {
+    width: 100%; /* Full width input field on smaller screens */
+  }
+}
